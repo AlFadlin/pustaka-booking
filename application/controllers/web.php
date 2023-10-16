@@ -14,4 +14,28 @@ class web extends CI_Controller{
         $this->load->view('v_footer',$data);
 
     }
+    public function about()
+ {
+ $data['judul'] = "Halaman About";
+ $this->load->view('v_header', $data);
+ $this->load->view('v_about', $data);
+ $this->load->view('v_footer', $data);
+ }
+    public function BukuTamu()
+ {
+ $data['judul'] = "Halaman Buku Tamu";
+ $this->load->view('v_header', $data);
+ $this->load->view('v_BukuTamu', $data);
+ $this->load->view('v_footer', $data);
+ }
+    public function cetak()
+ {
+    $data=[
+ 'nama'=>$this->input->post('nama'),
+ 'email'=>$this->input->post('email'),
+ 'komentar'=>$this->input->post('komentar')];
+    $this->load->view('v_header', $data);
+    $this->load->view('v_RegistrasiTamu', $data);
+    $this->load->view('v_footer', $data);
+ }
 }
